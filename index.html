@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EARTHLY — Know Your Impact. Make Better Choices.</title>
+  <meta name="description" content="An interactive environmental awareness and personal habit platform designed for Indian college students. Know your impact, make realistic zero-shame swaps.">
+  
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" role="banner">
+    <div class="container nav-content">
+      <a href="#" class="brand-logo" id="nav-brand-logo" aria-label="EARTHLY Home">
+        <span class="brand-globe-icon" aria-hidden="true">🌍</span>
+        <span>EARTHLY</span>
+        <span class="brand-tagline-subtle">Know your impact. Make better choices.</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active" data-nav="home">Home</a></li>
+          <li><a href="#how-it-works" class="nav-link" data-nav="how-it-works">How It Works</a></li>
+          <li><a href="#planet-reality" class="nav-link" data-nav="planet-reality">Our Planet</a></li>
+          <li><a href="#learn" class="nav-link" data-nav="learn">Learn & Facts</a></li>
+          <li><a href="#methodology" class="nav-link" id="nav-methodology-btn">Methodology</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline btn-sm hidden" id="nav-restart-btn" title="Restart your assessment from scratch">
+          ↺ Reset
+        </button>
+        <button class="btn btn-primary btn-sm" id="nav-calculator-btn">
+          Start Assessment
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN APPLICATION CONTENT -->
+  <main id="app-root">
+
+    <!-- ============================================================== -->
+    <!-- VIEW 1: HOMEPAGE VIEW                                          -->
+    <!-- ============================================================== -->
+    <section id="view-homepage" class="app-view">
+      
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <div>
+                <span class="badge badge-blue">🌱 Built for Indian College Students</span>
+              </div>
+              <h1 class="hero-title">
+                Know your impact.<br>
+                <span class="highlight">Make better choices.</span>
+              </h1>
+              <p class="hero-description">
+                Understand your everyday campus habits—from mess meals and chai tapris to hostel fans and transit. Discover your transparent impact score and experiment with practical, zero-cost improvements.
+              </p>
+
+              <!-- Living Arrangement Selector -->
+              <div class="living-setup-card">
+                <h3>Select Your Campus Living Arrangement</h3>
+                <p style="font-size: 0.88rem;">Questions dynamically adapt to what you can actually control.</p>
+                
+                <div class="living-grid" id="living-arrangement-grid">
+                  <!-- Injected via JavaScript -->
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px;">
+                <button class="btn btn-primary" id="hero-start-calc-btn">
+                  Start Your Impact Calculator →
+                </button>
+                <a href="#how-it-works" class="btn btn-secondary">
+                  Explore How It Works
+                </a>
+              </div>
+            </div>
+
+            <!-- Hero Earth Mascot Presentation -->
+            <div class="hero-mascot-card">
+              <div class="mascot-speech-bubble" id="hero-speech-bubble">
+                "Hey there! I'm Earth. Welcome to EARTHLY. Let's discover how your everyday choices shape our shared home."
+              </div>
+              
+              <div id="hero-mascot-mount">
+                <!-- Mascot SVG mounted dynamically -->
+              </div>
+              
+              <div class="mascot-mood-tag" id="hero-mascot-mood-tag">
+                Your Interactive Guide
+              </div>
+
+              <div style="margin-top: 18px; font-size: 0.82rem; color: var(--text-subtle);">
+                Zero guilt. Zero shaming. Real practical steps.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Visual Impact / Reality Check -->
+      <section id="planet-reality" class="story-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge badge-green">Visual Reality & Campus Context</span>
+            <h2>Our Planet: Balance vs Everyday Pressure</h2>
+            <p>
+              Environmental consciousness isn't about global despair—it's about understanding how everyday micro-actions aggregate into planetary outcomes.
+            </p>
+          </div>
+
+          <div class="story-grid">
+            <!-- Card 1: Pristine Nature Balance -->
+            <article class="story-card">
+              <div class="story-card-img-wrapper">
+                <img src="assets/earth-pristine-island.jpg" alt="Pristine natural ecosystem on a floating planet sphere" class="story-card-img" loading="lazy">
+              </div>
+              <div class="story-card-content">
+                <span class="badge badge-blue">Equilibrium</span>
+                <h3 class="story-card-title">The Self-Sustaining Biosphere</h3>
+                <p class="story-card-desc">
+                  Natural ecosystems maintain perfect equilibrium: trees absorb ambient carbon, water cycles naturally cleanse rivers, and zero synthetic waste exists. When resources are consumed within regenerative limits, natural habitats flourish with rich biodiversity.
+                </p>
+                <div style="margin-top: auto; font-size: 0.84rem; color: var(--blue-primary); font-weight: 600;">
+                  Goal: Keep our resource consumption within circular loops.
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Anthropogenic Pressure -->
+            <article class="story-card">
+              <div class="story-card-img-wrapper">
+                <img src="assets/earth-human-impact.jpg" alt="Collage of deforestation, industrial smoke, and human impact on Earth" class="story-card-img" loading="lazy">
+              </div>
+              <div class="story-card-content">
+                <span class="badge badge-cream">Human Footprint</span>
+                <h3 class="story-card-title">Everyday Industrial Pressures</h3>
+                <p class="story-card-desc">
+                  Rapid urbanization, fossil energy grids, and single-use consumer habits exert relentless strain on natural biomes. In India, over 70% of electricity is coal-fired (0.71 kg CO2e/kWh), and millions of single-use plastic bottles enter landfills daily.
+                </p>
+                <div style="margin-top: auto; font-size: 0.84rem; color: var(--coral-accent); font-weight: 600;">
+                  Reality: Everyday choices by 40M+ Indian students have massive leverage.
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Student Campus Companions Banner -->
+          <div style="margin-top: 40px; background-color: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <img src="assets/mascot-guide.jpg" alt="Earth Mascot Companion" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-subtle);">
+              <div>
+                <h4 style="font-size: 1.05rem;">Meet Your Guide</h4>
+                <p style="font-size: 0.84rem;">Earth accompanies you throughout your journey, reacting dynamically as your habits improve.</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <img src="assets/mascot-clean.jpg" alt="Minimal Earth sphere with cheeks" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-subtle);">
+              <div>
+                <h4 style="font-size: 1.05rem;">Non-Judgmental Philosophy</h4>
+                <p style="font-size: 0.84rem;">We measure habits you can reasonably control, never circumstances you cannot change.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: How It Works -->
+      <section id="how-it-works" class="features-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge badge-blue">Simple Three-Step Process</span>
+            <h2>How EARTHLY Works</h2>
+            <p>Designed for fast, friction-free engagement directly in your browser.</p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">1</div>
+              <h3>Answer Campus Habits</h3>
+              <p>
+                Take a quick 3-minute assessment covering Transportation, Mess Food, Room Electricity, and Shopping/Waste, customized to your living setup.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">2</div>
+              <h3>Transparent Impact Score</h3>
+              <p>
+                Receive an educational habit score (0-100) and separate activity-based CO2e footprint backed by Central Electricity Authority and ARAI data.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">3</div>
+              <h3>Experiment with Swaps</h3>
+              <p>
+                Use the <strong>No-Shame Swap</strong> simulator to toggle realistic habit tweaks and watch your score recalculate in real-time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Why EARTHLY -->
+      <section class="features-section" style="background-color: var(--bg-cream-light); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge badge-green">Tailored for Indian Students</span>
+            <h2>Why EARTHLY is Different</h2>
+            <p>Traditional carbon calculators assume private cars and suburban households. EARTHLY is built for Indian student realities.</p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">🚫</div>
+              <h3>No Shaming or Guilt</h3>
+              <p>
+                We never judge you for living in a non-AC hostel, eating mess food, or sharing a room. We celebrate every small, affordable step forward.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">⚡</div>
+              <h3>Mathematical Transparency</h3>
+              <p>
+                No mysterious black-box algorithms. We openly show category weights, point allocation, and documented Indian emission factors.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">💰</div>
+              <h3>Free & Money-Saving</h3>
+              <p>
+                Sustainable habits on campus—like refilling water bottles or taking the metro—actually save you ₹500 to ₹1,500 every single month.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Learn and Explore Preview -->
+      <section id="learn" class="articles-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge badge-blue">Curated Research & Facts</span>
+            <h2>Learn and Explore</h2>
+            <p>Peer-reviewed articles, institutional sources, and actionable Indian campus environmental data.</p>
+          </div>
+
+          <div class="articles-grid" id="curated-articles-grid">
+            <!-- Injected via JavaScript from articles.js -->
+          </div>
+
+          <!-- Did You Know Carousel / Grid -->
+          <div style="margin-top: 48px;">
+            <h3 style="text-align: center; font-size: 1.35rem; margin-bottom: 24px;">Campus Sustainability Facts</h3>
+            <div class="features-grid" id="did-you-know-grid">
+              <!-- Injected via JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Call To Action -->
+      <section class="features-section" style="padding: 70px 0; text-align: center;">
+        <div class="container container-narrow">
+          <div style="background-color: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 48px 32px; box-shadow: var(--shadow-md);">
+            <h2 style="font-size: 2.2rem; margin-bottom: 14px;">Ready to Discover Your Impact?</h2>
+            <p style="font-size: 1.05rem; margin-bottom: 28px; max-width: 540px; margin-left: auto; margin-right: auto;">
+              Takes less than 3 minutes. No registration required, works 100% in your browser, completely private.
+            </p>
+            <button class="btn btn-primary" id="cta-start-calc-btn" style="font-size: 1.05rem; padding: 14px 32px;">
+              Launch Impact Calculator →
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 2: QUESTIONNAIRE VIEW                                     -->
+    <!-- ============================================================== -->
+    <section id="view-questionnaire" class="app-view hidden questionnaire-section">
+      <div class="container container-narrow">
+        <div class="questionnaire-card">
+          
+          <!-- Progress Bar & Category Header -->
+          <div class="progress-header">
+            <div class="progress-meta">
+              <span id="questionnaire-progress-text">Question 1 of 15</span>
+              <span id="questionnaire-category-pill" class="badge badge-blue">Transportation</span>
+            </div>
+            <div class="progress-bar-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="7">
+              <div class="progress-bar-fill" id="questionnaire-progress-bar" style="width: 7%;"></div>
+            </div>
+          </div>
+
+          <!-- Question Content -->
+          <div class="question-header">
+            <h2 class="question-title" id="question-title-text">Question title goes here...</h2>
+            <p class="question-subtitle" id="question-subtitle-text">Question explanatory subtitle...</p>
+          </div>
+
+          <!-- Options List -->
+          <div class="options-list" id="question-options-container" role="radiogroup" aria-labelledby="question-title-text">
+            <!-- Dynamically populated option cards -->
+          </div>
+
+          <!-- Navigation Controls -->
+          <div class="question-navigation">
+            <button class="btn btn-outline" id="question-prev-btn" disabled>
+              ← Previous
+            </button>
+            <span style="font-size: 0.85rem; color: var(--text-subtle);" id="question-indicator">
+              1 / 15
+            </span>
+            <button class="btn btn-primary" id="question-next-btn">
+              Next Question →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 3: CALCULATING / LOADING SCREEN                           -->
+    <!-- ============================================================== -->
+    <section id="view-calculating" class="app-view hidden">
+      <div class="container container-narrow">
+        <div class="calculating-screen">
+          <div id="calculating-mascot-mount">
+            <!-- Thoughtful mascot mounted here -->
+          </div>
+          
+          <h2 style="font-size: 1.9rem;">Crunching Your Campus Data...</h2>
+          <p style="max-width: 440px;">Earth is carefully analyzing your daily choices and running the transparent scoring model.</p>
+
+          <ul class="calculating-steps" id="calc-step-list">
+            <li class="calc-step" id="step-1">
+              <span class="step-icon">○</span> Evaluating transit modes & ARAI emission factors
+            </li>
+            <li class="calc-step" id="step-2">
+              <span class="step-icon">○</span> Assessing mess diet & plate waste methane indicators
+            </li>
+            <li class="calc-step" id="step-3">
+              <span class="step-icon">○</span> Computing room energy & Central Electricity Authority grid factors
+            </li>
+            <li class="calc-step" id="step-4">
+              <span class="step-icon">○</span> Normalizing your educational habit score & generating swaps
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 4: RESULTS DASHBOARD                                      -->
+    <!-- ============================================================== -->
+    <section id="view-results" class="app-view hidden results-section">
+      <div class="container">
+        
+        <!-- Header Controls -->
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 28px;">
+          <div>
+            <span class="badge badge-green">Assessment Completed</span>
+            <h1 style="font-size: 2.2rem; margin-top: 6px;">Your Environmental Impact Dashboard</h1>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-outline btn-sm" id="results-methodology-btn">
+              Scoring Methodology
+            </button>
+            <button class="btn btn-outline btn-sm" id="results-restart-btn">
+              ↺ Retake Assessment
+            </button>
+          </div>
+        </div>
+
+        <!-- 1. Overall Score Hero Card -->
+        <div class="score-hero-card">
+          <div class="score-hero-grid">
+            <!-- Circular Dial & Mascot -->
+            <div class="score-circle-container">
+              <div class="score-dial">
+                <svg viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="42" fill="none" stroke="#F4F0E8" stroke-width="8" />
+                  <circle id="score-dial-circle" cx="50" cy="50" r="42" fill="none" stroke="#397D91" stroke-width="8" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="100" />
+                </svg>
+                <div class="score-number">
+                  <span class="score-val" id="res-score-value">0</span>
+                  <span class="score-max">/ 100 Habit Index</span>
+                </div>
+              </div>
+              <span class="badge badge-blue" id="res-status-badge">Calculating...</span>
+              <div style="font-size: 0.78rem; color: var(--text-subtle); margin-top: 6px;">
+                Lower score = Better habits
+              </div>
+            </div>
+
+            <!-- Score Info & Mascot Reaction -->
+            <div class="score-hero-info">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div id="results-mascot-mount" style="width: 80px; height: 80px; flex-shrink: 0;">
+                  <!-- Dynamic mascot expression -->
+                </div>
+                <div>
+                  <h2 id="res-status-title">Status Title</h2>
+                  <p id="res-living-badge" style="font-size: 0.85rem; font-weight: 600; color: var(--blue-primary);"></p>
+                </div>
+              </div>
+              
+              <div class="score-explanation-box" id="res-status-description">
+                Personalized explanation will appear here...
+              </div>
+
+              <!-- Transparency Note -->
+              <div style="font-size: 0.82rem; color: var(--text-subtle); line-height: 1.45;">
+                ℹ️ <strong>Educational Index:</strong> This score benchmarks controllable everyday student habits. It is not an industrial life-cycle certification.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Category Breakdown Grid -->
+        <div style="margin-bottom: 32px;">
+          <h3 style="font-size: 1.35rem; margin-bottom: 16px;">Category Breakdown</h3>
+          <div class="categories-breakdown-grid" id="category-breakdown-cards">
+            <!-- Dynamically populated 4 category cards -->
+          </div>
+        </div>
+
+        <!-- 3. Separate Activity-Based CO2e Footprint -->
+        <div class="co2e-card">
+          <div class="co2e-header">
+            <div>
+              <span class="badge badge-cream">Activity Emissions Estimate</span>
+              <h3 style="font-size: 1.45rem; margin-top: 4px;">Direct Monthly Carbon Footprint</h3>
+            </div>
+            <div class="co2e-big-stat">
+              <span class="co2e-val" id="res-co2e-total">0.0</span>
+              <span class="co2e-unit">kg CO₂e / month</span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.92rem; color: var(--text-main);">
+            Calculated strictly from empirical activity factors: Transportation (ARAI passenger-km factors) and Room Electricity (Central Electricity Authority CEA Baseline v19: 0.71 kg CO₂e/kWh).
+          </p>
+
+          <div class="co2e-breakdown-row">
+            <div class="co2e-sub-stat">
+              <div class="co2e-sub-label">Transportation Commute</div>
+              <div class="co2e-sub-val" id="res-co2e-transport">0.0 kg</div>
+              <div style="font-size: 0.78rem; color: var(--text-subtle); margin-top: 4px;" id="res-co2e-km-sub">0 km / mo</div>
+            </div>
+            <div class="co2e-sub-stat">
+              <div class="co2e-sub-label">Room Electricity Draw</div>
+              <div class="co2e-sub-val" id="res-co2e-electricity">0.0 kg</div>
+              <div style="font-size: 0.78rem; color: var(--text-subtle); margin-top: 4px;" id="res-co2e-kwh-sub">0 kWh / mo</div>
+            </div>
+          </div>
+
+          <div class="methodology-note">
+            ⚠️ <strong>Scope Transparency:</strong> Food agriculture and textile manufacturing are excluded from this quantitative kilogram figure due to wide lifecycle variances. They are evaluated above within the transparent Habit Index.
+          </div>
+        </div>
+
+        <!-- 4. NO-SHAME SWAP (Interactive Habit Simulator) -->
+        <section class="swap-section" id="no-shame-swap-section">
+          <div class="swap-header">
+            <div>
+              <div class="swap-simulator-badge">⚡ Interactive Habit Simulator</div>
+              <h3 style="font-size: 1.5rem; margin-top: 6px;">No-Shame Swap</h3>
+              <p style="font-size: 0.92rem; margin-top: 4px;">
+                Toggle realistic campus habit tweaks below. The scoring engine will recalculate your score live so you can see the exact points you save!
+              </p>
+            </div>
+            <button class="btn btn-outline btn-sm" id="swap-reset-btn">
+              Reset Swaps
+            </button>
+          </div>
+
+          <!-- Live Score Diff Bar -->
+          <div class="swap-diff-bar">
+            <div class="swap-diff-text">
+              Simulated Score: <span id="swap-simulated-score" style="font-size: 1.25rem; font-weight: 800; color: var(--blue-primary);">--</span>
+              <span style="color: var(--text-subtle); font-size: 0.85rem; font-weight: normal;" id="swap-baseline-tag">(Baseline: --)</span>
+            </div>
+            <div class="swap-diff-tag" id="swap-points-saved-tag">
+              0 Points Saved
+            </div>
+          </div>
+
+          <!-- Swaps Cards Grid -->
+          <div class="swaps-grid" id="swaps-cards-container">
+            <!-- Dynamically populated toggle cards -->
+          </div>
+        </section>
+
+        <!-- 5. Top 3 Personalized Recommendations -->
+        <section class="recommendations-section">
+          <div style="margin-bottom: 20px;">
+            <span class="badge badge-blue">Student Action Plan</span>
+            <h3 style="font-size: 1.45rem; margin-top: 4px;">Top 3 Practical Recommendations For You</h3>
+            <p style="font-size: 0.92rem;">Tailored to your specific questionnaire answers with zero or negligible financial cost.</p>
+          </div>
+
+          <div class="recs-grid" id="recommendations-cards-container">
+            <!-- Dynamically populated top 3 recommendations -->
+          </div>
+        </section>
+
+        <!-- 6. Weekly Environmental Challenge & Habit Tracker -->
+        <section class="challenge-section" id="weekly-challenge-section">
+          <div class="challenge-banner">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+              <span class="badge badge-green" id="challenge-badge">Energy Conscious</span>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--green-muted);" id="challenge-completion-status">0 / 7 Days Active</span>
+            </div>
+            <h3 style="font-size: 1.5rem;" id="challenge-title">The Zero-Phantom-Power Sprint</h3>
+            <p style="font-size: 0.95rem; color: var(--text-main);" id="challenge-tagline">7 days of mindful switches & unplugging before lectures</p>
+            <p style="font-size: 0.88rem; color: var(--text-muted);" id="challenge-desc">Room electronics and fans...</p>
+          </div>
+
+          <!-- 7-Day Checklist -->
+          <div>
+            <h4 style="font-size: 1.05rem; margin-bottom: 8px;">7-Day Habit Tracker</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);" id="challenge-daily-prompt">Click on each day you completed the habit:</p>
+            
+            <div class="days-tracker-grid" id="challenge-days-grid">
+              <!-- Dynamically populated 7 day toggle boxes -->
+            </div>
+          </div>
+
+          <!-- Reflection Questions -->
+          <div class="reflections-box">
+            <h4 style="font-size: 1.05rem; margin-bottom: 14px;">Weekly Reflection</h4>
+            
+            <div class="reflection-field">
+              <label for="ref-improvement">1. What improvement did you make this week?</label>
+              <textarea id="ref-improvement" placeholder="e.g. Switched off room fan every morning before leaving for class..."></textarea>
+            </div>
+
+            <div class="reflection-field">
+              <label for="ref-unchanged">2. Which habits remained unchanged or challenging?</label>
+              <textarea id="ref-unchanged" placeholder="e.g. Still bought two plastic bottles during library study session..."></textarea>
+            </div>
+
+            <div class="reflection-field">
+              <label for="ref-difficulties">3. What practical difficulties or campus friction did you face?</label>
+              <textarea id="ref-difficulties" placeholder="e.g. Campus water filter on 3rd floor was out of service..."></textarea>
+            </div>
+
+            <div class="reflection-field">
+              <label for="ref-next-goal">4. What is your primary sustainability goal for next week?</label>
+              <textarea id="ref-next-goal" placeholder="e.g. Keep a water bottle ready by my keys every evening..."></textarea>
+            </div>
+
+            <button class="btn btn-primary btn-sm" id="save-reflections-btn">
+              Save Weekly Reflection
+            </button>
+            <span id="reflection-save-status" style="font-size: 0.85rem; color: var(--green-muted); margin-left: 12px; font-weight: 600;"></span>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: METHODOLOGY & TRANSPARENCY                              -->
+  <!-- ============================================================== -->
+  <div class="modal-overlay" id="methodology-modal" role="dialog" aria-modal="true" aria-labelledby="modal-methodology-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+      
+      <span class="badge badge-blue">Mathematical Model & Transparency</span>
+      <h2 id="modal-methodology-title" style="font-size: 1.7rem; margin: 10px 0 16px;">How EARTHLY Calculates Impact</h2>
+      
+      <p style="font-size: 0.92rem; margin-bottom: 16px;">
+        EARTHLY separates educational habit analysis from physical activity emissions to maintain scientific integrity.
+      </p>
+
+      <h3 style="font-size: 1.15rem; margin-top: 20px; margin-bottom: 8px;">1. EARTHLY Habit Index (0 – 100)</h3>
+      <p style="font-size: 0.88rem; margin-bottom: 12px;">
+        <strong>Lower score = better habits.</strong> Normalized points earned within each category are weighted as follows:
+      </p>
+      
+      <div style="background-color: var(--bg-cream); padding: 14px 18px; border-radius: var(--radius-md); font-size: 0.88rem; font-family: monospace; margin-bottom: 16px;">
+        Category Score = (Points Earned / Maximum Points) × 100<br><br>
+        Overall Score = (Transportation × 0.30)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ (Food & Dining × 0.30)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ (Electricity × 0.20)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ (Shopping & Waste × 0.20)
+      </div>
+
+      <h3 style="font-size: 1.15rem; margin-top: 20px; margin-bottom: 8px;">2. Documented Activity CO₂e Factors</h3>
+      <p style="font-size: 0.88rem; margin-bottom: 12px;">
+        CO₂e is calculated strictly where reliable Indian empirical activity factors exist:
+      </p>
+
+      <ul style="padding-left: 20px; font-size: 0.88rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
+        <li>
+          <strong>Indian Grid Factor:</strong> <code>0.710 kg CO₂e / kWh</code> — Source: Central Electricity Authority (CEA) Baseline Database for Indian Power Sector (User Guide v19).
+        </li>
+        <li>
+          <strong>Solo Petrol Car/Cab:</strong> <code>0.140 kg CO₂e / km</code> — Source: Automotive Research Association of India (ARAI).
+        </li>
+        <li>
+          <strong>Petrol Two-Wheeler:</strong> <code>0.043 kg CO₂e / km</code> — Source: ARAI urban 110-150cc scooter benchmarks.
+        </li>
+        <li>
+          <strong>Bus / Metro Rail:</strong> <code>0.022 kg CO₂e / passenger-km</code> — Source: MoHUA / Urban mass transit studies.
+        </li>
+        <li>
+          <strong>Walking / Bicycle:</strong> <code>0.000 kg CO₂e / km</code> — Clean zero direct emission.
+        </li>
+      </ul>
+
+      <h3 style="font-size: 1.15rem; margin-top: 20px; margin-bottom: 8px;">3. Scope Boundaries</h3>
+      <p style="font-size: 0.88rem; color: var(--text-muted);">
+        Food supply chain and fashion production life-cycle emissions are excluded from the quantitative kilogram figure due to vast localized variances. They are addressed through the transparent Habit Index.
+      </p>
+
+      <div style="margin-top: 28px; text-align: right;">
+        <button class="btn btn-primary btn-sm" id="modal-got-it-btn">Understood</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 12px;">
+            <span class="brand-globe-icon">🌍</span>
+            <span>EARTHLY</span>
+          </div>
+          <p style="font-size: 0.88rem; max-width: 380px;">
+            An interactive environmental awareness and habit improvement platform for Indian college students. Know your impact, make better choices.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.95rem; margin-bottom: 12px;">Navigation</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem;">
+            <li><a href="#home" class="footer-link" data-nav="home">Home</a></li>
+            <li><a href="#how-it-works" class="footer-link" data-nav="how-it-works">How It Works</a></li>
+            <li><a href="#planet-reality" class="footer-link" data-nav="planet-reality">Our Planet</a></li>
+            <li><a href="#learn" class="footer-link" data-nav="learn">Learn & Facts</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.95rem; margin-bottom: 12px;">Philosophy</h4>
+          <p style="font-size: 0.84rem;">
+            Measure what students can reasonably control. Never judge circumstances you cannot change. Sustainable choices that save money.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        EARTHLY © 2026. Made with care for our shared planet. Works entirely offline in your browser.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic Modules -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
